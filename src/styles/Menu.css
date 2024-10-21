@@ -1,0 +1,33 @@
+.menu {
+  background-color: #000000e0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu__icon {
+  margin-left: 1rem;
+  margin-top: 1rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu__list li {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  letter-spacing: 0.1em;
+}

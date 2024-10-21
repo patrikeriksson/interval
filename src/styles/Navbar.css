@@ -1,0 +1,17 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  position: relative;
+}
+
+.navbar__icon {
+  position: absolute;
+  left: 1rem;
+  top: 0;
+}
+
+.logo {
+  margin: 0;
+}

@@ -1,0 +1,14 @@
+.digital {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.digital__timer {
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 6.5rem;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
