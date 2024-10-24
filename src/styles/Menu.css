@@ -1,18 +1,21 @@
 .menu {
-  background-color: #000000e0;
+  background-color: #000000ed;
   height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
 }
 
 .menu__icon {
-  margin-left: 1rem;
-  margin-top: 1rem;
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 1rem;
+  top: 1rem;
 }
 
 .menu__list {
@@ -24,10 +27,11 @@
   padding: 0;
 }
 
-.menu__list li {
+.menu__list a {
   color: #ffffff;
   font-weight: 700;
   font-size: 1.5rem;
   line-height: 2rem;
   letter-spacing: 0.1em;
+  text-decoration: none;
 }

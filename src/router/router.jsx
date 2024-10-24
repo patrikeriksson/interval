@@ -3,6 +3,7 @@ import SetTimer from "../pages/SetTimer";
 import Alarm from "../pages/Alarm";
 import DigitalTimer from "../pages/DigitalTimer";
 import Loading from "../pages/Loading";
+import AnalogTimer from "../pages/AnalogTimer";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: "/digital-timer",
     element: <DigitalTimer />,
+  },
+  {
+    path: "/analog-timer",
+    element: <AnalogTimer />,
   },
 ]);
 

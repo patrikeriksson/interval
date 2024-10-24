@@ -1,9 +1,13 @@
-import Navbar from "../components/Navbar.jsx";
 import "../styles/SetTimer.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import TimerContext from "../context/TimerContext";
+import Navbar from "../components/Navbar.jsx";
 
 function SetTimer() {
+  const { timer } = useContext(TimerContext);
   const [minutes, setMinutes] = useState(10);
+  const navigate = useNavigate();
 
   const handleDecrement = () => {
     setMinutes((prevMinutes) => Math.max(prevMinutes - 1, 1));
@@ -25,30 +29,41 @@ function SetTimer() {
     setMinutes(newMinutes);
   };
 
+  const handleClick = () => {
+    timer.start({ countdown: true, startValues: { minutes } });
+
+    navigate("/analog-timer");
+  };
+
   return (
     <>
       <Navbar />
       <main className="timer">
-        <div className="timer__container">
-          <button className="timer__decrement" onClick={handleDecrement}>
-            &lt;
-          </button>
-          <input
-            className="timer__input"
-            type="number"
-            id="minutes"
-            value={minutes}
-            onChange={handleInputChange}
-            min="0"
-            step="1"
-          />
-          <button className="timer__increment" onClick={handleIncrement}>
-            &gt;
-          </button>
-        </div>
-        <p>minutes</p>
+        <div className="timer__wrapper">
+          <div className="timer__container">
+            <button className="timer__decrement" onClick={handleDecrement}>
+              &lt;
+            </button>
+            <input
+              className="timer__input"
+              type="number"
+              id="minutes"
+              value={minutes}
+              onChange={handleInputChange}
+              min="0"
+              step="1"
+            />
 
-        <button className="timer__start-button">START TIMER</button>
+            <button className="timer__increment" onClick={handleIncrement}>
+              &gt;
+            </button>
+          </div>
+          <p className="timer__text">minutes</p>
+        </div>
+
+        <button className="timer__start-button" onClick={handleClick}>
+          START TIMER
+        </button>
       </main>
     </>
   );

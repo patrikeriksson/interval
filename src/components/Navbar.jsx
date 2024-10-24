@@ -1,8 +1,17 @@
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import Menu from "./Menu.jsx";
 import "../styles/Navbar.css";
 
 function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
+
   return (
-    <nav className="navbar">
+    <header className="navbar">
       <svg
         className="navbar__icon"
         width="32"
@@ -10,6 +19,7 @@ function Navbar() {
         viewBox="0 0 32 32"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        onClick={toggleMenu}
       >
         <rect
           x="32"
@@ -44,8 +54,11 @@ function Navbar() {
         />
       </svg>
 
-      <h1 className="logo">interval</h1>
-    </nav>
+      <h1 className="logo">
+        <NavLink to="/set-timer">interval</NavLink>
+      </h1>
+      {isMenuOpen && <Menu toggleMenu={toggleMenu} />}
+    </header>
   );
 }
 

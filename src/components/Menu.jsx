@@ -1,6 +1,7 @@
+import { NavLink } from "react-router-dom";
 import "../styles/Menu.css";
 
-function Menu() {
+function Menu({ toggleMenu }) {
   return (
     <nav className="menu">
       <svg
@@ -10,6 +11,7 @@ function Menu() {
         viewBox="0 0 32 32"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        onClick={toggleMenu}
       >
         <rect
           x="32"
@@ -44,8 +46,16 @@ function Menu() {
         />
       </svg>
       <ul className="menu__list">
-        <li>ANALOG TIMER</li>
-        <li>DIGITAL TIMER</li>
+        <li>
+          <NavLink to="/analog-timer" onClick={toggleMenu}>
+            ANALOG TIMER
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/digital-timer" onClick={toggleMenu}>
+            DIGITAL TIMER
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );

@@ -1,6 +1,13 @@
 import "../styles/Alarm.css";
+import { useNavigate } from "react-router-dom";
 
 function Alarm() {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/set-timer");
+  };
+
   return (
     <main className="alarm">
       <svg
@@ -16,7 +23,9 @@ function Alarm() {
         />
       </svg>
       <h2 className="alarm__heading">Times up!</h2>
-      <button className="alarm__button">SET NEW TIMER</button>
+      <button className="alarm__button" onClick={handleClick}>
+        SET NEW TIMER
+      </button>
     </main>
   );
 }
