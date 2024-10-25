@@ -14,10 +14,5 @@ createRoot(document.getElementById("root")).render(
 );
 
 // TODO
-// meny overlay
-// meny navigation
 
-// animationer
-// styling
-
-// vissa buttons kanske borde vara a taggar
+// Fixa analoga klockan
