@@ -12,7 +12,3 @@ createRoot(document.getElementById("root")).render(
     </TimerProvider>
   </StrictMode>
 );
-
-// TODO
-
-// Fixa analoga klockan
