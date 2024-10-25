@@ -29,7 +29,8 @@ function AnalogTimer() {
     };
   }, [timer, navigate]);
 
-  const minutes = timeValues.minutes * 60;
+  const minuteRotation =
+    (60 - timeValues.minutes - timeValues.seconds / 60) * 6;
 
   return (
     <>
@@ -38,10 +39,10 @@ function AnalogTimer() {
         <div className="analog__timer">
           <motion.div
             className="hand"
-            animate={{ rotate: -360 }}
+            style={{ rotate: minuteRotation }}
+            animate={{ rotate: minuteRotation }}
             transition={{
               ease: "linear",
-              duration: minutes,
             }}
           ></motion.div>
 
