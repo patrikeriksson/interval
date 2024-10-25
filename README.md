@@ -1,5 +1,5 @@
 # interval
-Timer webb-app for mobile
+Timer web-app for mobile
 
 ## Loading page
 ![interval-loading](https://github.com/user-attachments/assets/3d469183-c123-4183-a460-cbb9afce9d63)
