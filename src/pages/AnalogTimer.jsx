@@ -39,8 +39,8 @@ function AnalogTimer() {
         <div className="analog__timer">
           <motion.div
             className="hand"
-            style={{ rotate: minuteRotation }}
-            animate={{ rotate: minuteRotation }}
+            style={{ rotate: -minuteRotation }}
+            animate={{ rotate: -minuteRotation }}
             transition={{
               ease: "linear",
             }}
