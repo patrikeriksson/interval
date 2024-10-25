@@ -1,4 +1,10 @@
 # interval
+Timer webb-app for mobile
+
+## Loading page
+![interval-loading](https://github.com/user-attachments/assets/3d469183-c123-4183-a460-cbb9afce9d63)
+
+
 ## Setting the timer
 ![interval](https://github.com/user-attachments/assets/c1b5c2ca-739b-4c85-99f0-c7482678e1e3)
 
