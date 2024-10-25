@@ -2,6 +2,7 @@ import "../styles/AbortButton.css";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import TimerContext from "../context/TimerContext";
+import { motion } from "framer-motion";
 
 function AbortButton() {
   const { timer } = useContext(TimerContext);
@@ -13,9 +14,14 @@ function AbortButton() {
   };
 
   return (
-    <button className="abort-button" onClick={handleAbort}>
+    <motion.button
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className="abort-button"
+      onClick={handleAbort}
+    >
       ABORT TIMER
-    </button>
+    </motion.button>
   );
 }
 

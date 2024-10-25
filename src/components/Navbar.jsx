@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
 import Menu from "./Menu.jsx";
 import "../styles/Navbar.css";
 
@@ -54,9 +53,7 @@ function Navbar() {
         />
       </svg>
 
-      <h1 className="logo">
-        <NavLink to="/set-timer">interval</NavLink>
-      </h1>
+      <h1 className="logo">interval</h1>
       {isMenuOpen && <Menu toggleMenu={toggleMenu} />}
     </header>
   );

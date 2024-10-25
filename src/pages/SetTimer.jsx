@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TimerContext from "../context/TimerContext";
 import Navbar from "../components/Navbar.jsx";
+import { motion } from "framer-motion";
 
 function SetTimer() {
   const { timer } = useContext(TimerContext);
@@ -61,9 +62,14 @@ function SetTimer() {
           <p className="timer__text">minutes</p>
         </div>
 
-        <button className="timer__start-button" onClick={handleClick}>
+        <motion.button
+          className="timer__start-button"
+          onClick={handleClick}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
           START TIMER
-        </button>
+        </motion.button>
       </main>
     </>
   );

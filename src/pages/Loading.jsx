@@ -1,8 +1,21 @@
 import "../styles/Loading.css";
+import { motion } from "framer-motion";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Loading() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      navigate("/set-timer");
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, [navigate]);
+
   return (
-    <main className="loading">
+    <motion.main className="loading">
       <svg
         width="36"
         height="35"
@@ -45,7 +58,8 @@ function Loading() {
       </svg>
       <h2 className="loading__heading">INTERVAL</h2>
       <p className="loading__subheading">For all your timing needs</p>
-    </main>
+    </motion.main>
   );
 }
+
 export default Loading;

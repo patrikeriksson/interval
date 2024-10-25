@@ -1,5 +1,6 @@
 import "../styles/Alarm.css";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 function Alarm() {
   const navigate = useNavigate();
@@ -11,6 +12,7 @@ function Alarm() {
   return (
     <main className="alarm">
       <svg
+        className="alarm__bell"
         width="85"
         height="86"
         viewBox="0 0 85 86"
@@ -23,9 +25,14 @@ function Alarm() {
         />
       </svg>
       <h2 className="alarm__heading">Times up!</h2>
-      <button className="alarm__button" onClick={handleClick}>
+      <motion.button
+        className="alarm__button"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        onClick={handleClick}
+      >
         SET NEW TIMER
-      </button>
+      </motion.button>
     </main>
   );
 }
